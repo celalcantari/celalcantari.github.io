@@ -162,6 +162,14 @@
       font-size:18px;
     }
 
+    #form-message{
+      margin-top:20px;
+      text-align:center;
+      color:#3FA9F5;
+      font-weight:600;
+      font-size:18px;
+    }
+
     /* SERVICES */
 
     .services{
@@ -553,19 +561,21 @@
 
     </div>
 
-    <form class="contact-form">
+    <form id="contact-form" class="contact-form">
 
-      <input type="text" placeholder="Ihr Name" required>
+  <input type="text" name="name" placeholder="Ihr Name" required>
 
-      <input type="email" placeholder="Ihre E-Mail" required>
+  <input type="email" name="email" placeholder="Ihre E-Mail" required>
 
-      <textarea placeholder="Ihre Nachricht" required></textarea>
+  <textarea name="message" placeholder="Ihre Nachricht" required></textarea>
 
-      <button type="submit">
-        Nachricht senden
-      </button>
+  <button type="submit">
+    Nachricht senden
+  </button>
 
-    </form>
+</form>
+
+<div id="form-message"></div>
 
   </section>
 
@@ -660,58 +670,76 @@ emailjs.init({
   publicKey: "xcjf9swNgfdv4qy39"
 });
 
+
 const form = document.getElementById("contact-form");
 const message = document.getElementById("form-message");
 
-form.addEventListener("submit", function(e){
+console.log("FORM:", form);
+console.log("MESSAGE:", message);
 
-  e.preventDefault();
+if (form) {
 
-  message.innerHTML = "⏳ Nachricht wird gesendet...";
-  message.style.color = "#FFFFFF";
+  form.addEventListener("submit", function(e) {
 
-  emailjs.sendForm(
-    "service_mh7db58",
-    "template_6i8enzd",
-    this
-  )
+    e.preventDefault();
 
-  .then(() => {
+    console.log("FORMULAR ABGESENDET");
 
-    return emailjs.send(
+    message.innerHTML = "⏳ Nachricht wird gesendet...";
+    message.style.color = "#FFFFFF";
+
+    emailjs.sendForm(
       "service_mh7db58",
-      "template_ys0cgum",
-      {
-        name: form.elements["name"].value,
-        email: form.elements["email"].value,
-        message: form.elements["message"].value
-      }
-    );
+      "template_6i8enzd",
+      this
+    )
 
-  })
+    .then(() => {
 
-  .then(() => {
+      console.log("ERSTE EMAIL GESENDET");
 
-    message.innerHTML =
-      "✅ Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt.";
+      return emailjs.send(
+        "service_mh7db58",
+        "template_ys0cgum",
+        {
+          name: form.elements["name"].value,
+          email: form.elements["email"].value,
+          message: form.elements["message"].value
+        }
+      );
 
-    message.style.color = "#3FA9F5";
+    })
 
-    form.reset();
+    .then(() => {
 
-  })
+      console.log("BESTÄTIGUNGSMAIL GESENDET");
 
-  .catch((error) => {
+      message.innerHTML =
+        "✅ Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt.";
 
-    console.error(error);
+      message.style.color = "#3FA9F5";
 
-    message.innerHTML =
-      "❌ Fehler beim Versenden. Bitte versuchen Sie es erneut.";
+      form.reset();
 
-    message.style.color = "#FF8A00";
+    })
+
+    .catch((error) => {
+
+      console.error("EMAILJS FEHLER:", error);
+
+      message.innerHTML =
+        "❌ Fehler beim Versenden. Bitte versuchen Sie es erneut.";
+
+      message.style.color = "#FF8A00";
+
+    });
 
   });
 
-});
+} else {
+
+  console.error("Formular mit ID 'contact-form' nicht gefunden!");
+
+}
 
 </script>
