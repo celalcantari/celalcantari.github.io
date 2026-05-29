@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css">
 
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-</head>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -172,6 +171,9 @@
       color:#3FA9F5;
       font-weight:600;
       font-size:18px;
+      max-width:750px;
+      margin-left:auto;
+      margin-right:auto;
     }
 
     /* SERVICES */
@@ -406,8 +408,8 @@
 
   <!-- HERO -->
 
-  <section class="hero">
-
+ <section class="hero" data-aos="fade-up">
+   
     <div class="hero-content">
 
       <img
@@ -454,56 +456,56 @@
 
     <div class="services">
 
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-up">
         <h2>Medikamenten Transporte</h2>
         <p>
           GDP-konforme Transporte von Medikamenten und sensiblen Waren im Temperaturbereich von 8 bis 20 Grad Celsius.
         </p>
       </div>
 
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-up" data-aos-delay="100">
         <h2>Kurier- & Direktfahrten</h2>
         <p>
           Schnelle Same-Day-Lieferungen im Rhein-Main-Gebiet sowie europaweite Direkttransporte ohne Umwege.
         </p>
       </div>
 
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-up" data-aos-delay="200">
         <h2>Zeitungsauslieferung</h2>
         <p>
           Tägliche Belieferung von REWE, LIDL und zahlreichen Kiosken mit Zeitungen und Presseprodukten.
         </p>
       </div>
 
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-up" data-aos-delay="300">
         <h2>Europaweite Transporte</h2>
         <p>
           Flexible Transportlösungen innerhalb Deutschlands und europaweit.
         </p>
       </div>
 
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-up" data-aos-delay="400">
         <h2>Gefahrguttransporte</h2>
         <p>
           Sicherer Transport von Gefahrgutaufträgen bis 1000 Punkte nach gesetzlichen Vorschriften.
         </p>
       </div>
 
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-up" data-aos-delay="500">
         <h2>Lager & Kommissionierung</h2>
         <p>
           Übernahme von Kommissionierungs- und Lageraufträgen für Unternehmen und Geschäftspartner.
         </p>
       </div>
 
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-up" data-aos-delay="600">
         <h2>Flexible Fahrzeugflotte</h2>
         <p>
           Über 30 moderne Fahrzeuge für individuelle Transportlösungen jeder Art.
         </p>
       </div>
 
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-up" data-aos-delay="700">
         <h2>Tägliche Transportleistung</h2>
         <p>
           Mit über 200 Touren täglich sorgen wir für zuverlässige Logistiklösungen im Rhein-Main-Gebiet und europaweit.
@@ -516,7 +518,7 @@
 
   <!-- ABOUT -->
 
-  <section id="about">
+  <section id="about" data-aos="fade-right">
 
     <div class="about">
 
@@ -553,8 +555,7 @@
 
   <!-- KONTAKT -->
 
-  <section id="kontakt">
-
+  <section id="kontakt" data-aos="zoom-in">
     <div class="section-title">
 
       <h2>Kontakt</h2>
@@ -585,7 +586,7 @@
 
   <!-- IMPRESSUM -->
 
-  <section id="impressum">
+  <section id="impressum" data-aos="fade-up">
 
     <div class="section-title">
       <h2>Impressum & Datenschutz</h2>
@@ -747,3 +748,15 @@ if (form) {
 }
 
 </script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+  duration: 1200,
+  once: true
+});
+</script>
+
+</body>
+</html>
