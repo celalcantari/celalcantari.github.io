@@ -269,33 +269,59 @@ content="Kurierdienst in Frankfurt am Main für Expressfahrten, Direktfahrten, G
     /* FAQ */
 
 .faq{
-  padding:100px 20px;
-  background:#f8fafc;
+  background:#0A2540;
+  padding:100px 8%;
 }
 
 .faq h2{
   text-align:center;
-  font-size:42px;
-  color:#0A2540;
+  color:#fff;
+  font-size:48px;
   margin-bottom:60px;
 }
 
 .faq-item{
-  background:#fff;
-  padding:25px;
+  background:#13385f;
+  border-radius:20px;
   margin-bottom:20px;
-  border-radius:18px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:all .3s ease;
 }
 
-.faq-item h3{
-  color:#0A2540;
-  margin-bottom:15px;
+.faq-item:hover{
+  border-color:#FF8A00;
+  transform:translateY(-3px);
+}
+
+.faq-item summary{
+  padding:25px;
+  cursor:pointer;
+  color:#fff;
   font-size:22px;
+  font-weight:600;
+  list-style:none;
+}
+
+.faq-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.faq-item summary::after{
+  content:"+";
+  float:right;
+  color:#FF8A00;
+  font-size:28px;
+  font-weight:bold;
+}
+
+.faq-item[open] summary::after{
+  content:"−";
 }
 
 .faq-item p{
-  color:#555;
+  padding:0 25px 25px;
+  color:#d7e7f7;
   line-height:1.8;
   font-size:17px;
 }
@@ -367,30 +393,31 @@ content="Kurierdienst in Frankfurt am Main für Expressfahrten, Direktfahrten, G
 
     /* FOOTER */
 
-    footer{
-      background:#07192c;
-      padding:35px;
-      text-align:center;
-      color:#aac0d5;
-      border-top:1px solid rgba(255,255,255,0.05);
-    }
+    .footer{
+  background:#071c33;
+  padding:40px 20px;
+  text-align:center;
+}
 
-    .footer-links{
-      margin-top:15px;
-      display:flex;
-      justify-content:center;
-      gap:25px;
-      flex-wrap:wrap;
-    }
+.footer-links{
+  margin-bottom:15px;
+}
 
-    .footer-links a{
-      color:var(--light-blue);
-      text-decoration:none;
-    }
+.footer-links a{
+  color:white;
+  text-decoration:none;
+  margin:0 15px;
+  font-weight:500;
+}
 
-    .footer-links a:hover{
-      color:var(--orange);
-    }
+.footer-links a:hover{
+  color:#FF8A00;
+}
+
+.footer p{
+  color:#b8c7d9;
+  font-size:14px;
+}
 
     /* WHATSAPP */
 
@@ -466,12 +493,13 @@ content="Kurierdienst in Frankfurt am Main für Expressfahrten, Direktfahrten, G
     </div>
 
     <ul>
-      <li><a href="#">Start</a></li>
-      <li><a href="#leistungen">Leistungen</a></li>
-      <li><a href="#about">Über Uns</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-      <li><a href="#impressum">Impressum</a></li>
-    </ul>
+  <li><a href="#">Start</a></li>
+  <li><a href="#leistungen">Leistungen</a></li>
+  <li><a href="#about">Über Uns</a></li>
+  <li><a href="#faq">FAQ</a></li>
+  <li><a href="#kontakt">Kontakt</a></li>
+  <li><a href="#impressum">Impressum</a></li>
+</ul>
 
   </nav>
 
@@ -658,60 +686,45 @@ Expressfahrten und GDP-konforme Medikamententransporte
 </section>
 <!-- FAQ -->
 
-<section class="faq" data-aos="fade-up">
+<section id="faq" class="faq" data-aos="fade-up">
 
-  <div class="container">
+  <h2>Fragen zu unseren Transportleistungen</h2>
 
-    <h2>Häufig gestellte Fragen</h2>
+  <details class="faq-item">
+    <summary>🚚 Bieten Sie Expressfahrten in Frankfurt an?</summary>
+    <p>
+      Ja. Tari Transporte bietet kurzfristige Expressfahrten und Direktfahrten
+      in Frankfurt am Main, deutschlandweit und europaweit an.
+    </p>
+  </details>
 
-    <div class="faq-item">
-      <h3>🚚 Bieten Sie Expressfahrten in Frankfurt an?</h3>
-      <p>
-        Ja. Tari Transporte bietet kurzfristige Expressfahrten und Direktfahrten
-        in Frankfurt am Main, deutschlandweit und europaweit an.
-      </p>
-    </div>
+  <details class="faq-item">
+    <summary>💊 Transportieren Sie Medikamente?</summary>
+    <p>
+      Ja. Wir führen GDP-konforme Medikamententransporte durch und sorgen für einen sicheren und zuverlässigen Transport sensibler Sendungen.
+    </p>
+  </details>
 
-    <div class="faq-item">
-      <h3>💊 Transportieren Sie Medikamente?</h3>
-      <p>
-        Ja. Wir führen GDP-konforme Medikamententransporte durch und sorgen für
-        einen sicheren und zuverlässigen Transport sensibler Sendungen.
-      </p>
-    </div>
+  <details class="faq-item">
+    <summary>📍 In welchen Regionen sind Sie tätig?</summary>
+    <p>
+      Unser Standort befindet sich in Frankfurt am Main. Wir übernehmen Transporte in ganz Deutschland sowie europaweite Direktfahrten.
+    </p>
+  </details>
 
-    <div class="faq-item">
-      <h3>📍 In welchen Regionen sind Sie tätig?</h3>
-      <p>
-        Unser Standort befindet sich in Frankfurt am Main. Wir übernehmen
-        Transporte in ganz Deutschland sowie europaweite Direktfahrten.
-      </p>
-    </div>
+  <details class="faq-item">
+    <summary>⏰ Sind kurzfristige Aufträge möglich?</summary>
+    <p>
+      Ja. Viele unserer Fahrten werden kurzfristig organisiert. Kontaktieren Sie uns einfach telefonisch oder per WhatsApp.
+    </p>
+  </details>
 
-    <div class="faq-item">
-      <h3>⏰ Sind auch kurzfristige Aufträge möglich?</h3>
-      <p>
-        Ja. Viele Aufträge übernehmen wir noch am selben Tag. Kontaktieren Sie
-        uns einfach telefonisch oder über das Kontaktformular.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>📦 Welche Sendungen transportieren Sie?</h3>
-      <p>
-        Wir transportieren Dokumente, Pakete, Ersatzteile, Medikamente,
-        eilige Sendungen sowie individuelle Transportgüter.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>📞 Wie kann ich eine Transportanfrage stellen?</h3>
-      <p>
-        Nutzen Sie unser Kontaktformular, schreiben Sie uns per WhatsApp oder
-        rufen Sie uns direkt unter 0176 23873142 an.
-      </p>
-    </div>
-</div>
+  <details class="faq-item">
+    <summary>📦 Welche Sendungen transportieren Sie?</summary>
+    <p>
+      Wir transportieren Dokumente, Pakete, Ersatzteile, Medikamente, Expresssendungen und weitere Güter zuverlässig von A nach B.
+    </p>
+  </details>
 
 </section>
   <!-- KONTAKT -->
@@ -886,7 +899,14 @@ box-shadow:0 10px 25px rgba(0,0,0,0.25);
   </section>
 
 <footer>
-  © 2026 Tari Transporte • Alle Rechte vorbehalten
+
+  <div class="footer-links">
+    <a href="#impressum">Impressum</a>
+    <a href="#datenschutz">Datenschutz</a>
+  </div>
+
+  <p>© 2026 Tari Transporte Frankfurt. Alle Rechte vorbehalten.</p>
+
 </footer>
 
 <a
