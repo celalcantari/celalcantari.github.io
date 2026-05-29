@@ -831,17 +831,18 @@ if (form) {
       console.log("ERSTE EMAIL GESENDET");
 
       return emailjs.send(
-        "service_mh7db58",
-        "template_ys0cgum",
-        {
-          name: form.elements["name"].value,
-          email: form.elements["email"].value,
-          telefon: form.elements["telefon"].value,
-          abholort: form.elements["abholort"].value,
-          lieferort: form.elements["lieferort"].value,
-          datum: form.elements["datum"].value,
-          nachricht: form.elements["message"].value
-      );
+  "service_mh7db58",
+  "template_ys0cgum",
+  {
+    name: form.elements["name"].value,
+    email: form.elements["email"].value,
+    telefon: form.elements["telefon"].value,
+    abholort: form.elements["abholort"].value,
+    lieferort: form.elements["lieferort"].value,
+    datum: form.elements["datum"].value,
+    nachricht: form.elements["message"].value
+  }
+);
 
     })
 
